@@ -53,16 +53,17 @@ namespace Brings_Canteen
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
+            
+            // Uncomment this next two lines after you replace the Client Id and Secret in Keys.cs
+//             app.UseFacebookAuthentication(
+//                appId: Keys.Facebook.AppID,
+//                appSecret: Keys.Facebook.AppSecret);
 
-            app.UseFacebookAuthentication(
-               appId: Keys.Facebook.AppID,
-               appSecret: Keys.Facebook.AppSecret);
-
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            {
-                ClientId = Keys.Google.ClientID,
-                ClientSecret = Keys.Google.ClientSecret
-            });
+//             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+//             {
+//                 ClientId = Keys.Google.ClientID,
+//                 ClientSecret = Keys.Google.ClientSecret
+//             });
         }
     }
 }
