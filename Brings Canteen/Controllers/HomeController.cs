@@ -30,10 +30,15 @@ namespace Bring_Canteen.Controllers
         }
 
         [AllowAnonymous]
-        [OutputCache(Duration = 20, Location = OutputCacheLocation.Client, NoStore = true)]
-        public ActionResult Image()
+        public ActionResult Image(string fileName)
         {
-            string filePath = HttpContext.Server.MapPath("~/Images/food-one.jpg");
+
+            if (fileName == null)
+            {
+                fileName = "food-one.jpg";
+            }
+
+            string filePath = HttpContext.Server.MapPath("~/Images/" + fileName);
 
             byte[] file = System.IO.File.ReadAllBytes(filePath);
             string fileType = MimeMapping.GetMimeMapping(filePath);

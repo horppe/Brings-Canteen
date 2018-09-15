@@ -1,5 +1,4 @@
 ﻿:root {
-    
     ---jumbo-slider-end:90%;
     
     /*---jumbotron-bg-start: rgba(187, 60, 252, 1);
@@ -9,11 +8,11 @@
     ---background-color : rgba(187, 60, 252, 1);
 
     ---bg-color-list-odd: rgba(187, 60, 252, .2);
-    ---bg-color-list-even: rgba(187, 60, 252, .7);*/
-    
-    
+    ---bg-color-list-even: rgba(187, 60, 252, .7);
 
-    ---jumbotron-bg-start: rgba(217, 83, 79, 1);
+    ---card-bg-hover-color : rgba(187, 60, 252, .6);*/
+
+    /*---jumbotron-bg-start: rgba(217, 83, 79, 1);
     ---jumbotron-bg-end: rgba(217, 83, 79, .5);
 
     ---nav-bg-color: rgba(217, 83, 79, 1);
@@ -22,24 +21,85 @@
     ---bg-color-list-odd: rgba(217, 83, 79, .2);
     ---bg-color-list-even: rgba(217, 83, 79, .7);
 
+    ---card-bg-hover-color : rgba(217, 83, 79, .6);*/
+
+    ---nav-hover-color: white;
+    ---jumbo-text:white;
+
     ---body-text-color: white;
     ---body-text-hover-color:black;
-
-    ---card-bg-hover-color : rgba(217, 83, 79, .6);
 }
+
+
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    /*background-color:#444;*/
-    background-image: url(/home/image);
+    background-color:#444;    
+    color: var(---body-text-color);
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    background-image: url(/home/image?fileName=food-one.jpg);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height:100%;
+    width:100%;
     background-size:cover;
     background-attachment:fixed;
     background-repeat:no-repeat;
-    
+    z-index:-2;
 
-    color: var(---body-text-color);
+    animation-name: fader;
+    animation-fill-mode:both;
+    animation-duration: 40s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-in;
 }
+
+@keyframes fader {
+    0% {  
+        background-image: url(/home/image?fileName=food-one.jpg); 
+    }
+
+    20% {
+         background-image: url(/home/image?fileName=food-one.jpg); 
+
+    }
+
+    25% {  
+         background-image: url(/home/image?fileName=food-two.jpg);
+    }
+
+
+    45% {
+         background-image: url(/home/image?fileName=food-two.jpg); 
+    }
+
+    50% {
+        background-image: url(/home/image?fileName=food-three.jpeg);
+    }
+
+    70% {
+        background-image: url(/home/image?fileName=food-three.jpeg);
+    }
+
+    75% {
+        background-image: url(/home/image?fileName=food-four.jpg);
+    }
+
+    95% {
+        background-image: url(/home/image?fileName=food-four.jpg);
+    }
+    100% {
+        background-image: url(/home/image?fileName=food-one.jpg);
+    }
+    
+}
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -78,11 +138,10 @@ textarea {
     letter-spacing:1px;
 }
 
-
 #nav li:hover a{
     background-color: var(---nav-bg-color);
     box-shadow: 0px -2px rgba(0,0,0,.3), 0px 2px rgba(0,0,0,.1);
-    color:black;
+    color:var(---nav-hover-color);
     transform: translateY(5px);
     
 }
@@ -105,12 +164,12 @@ textarea {
 }
 /* #bb3cfcff */
 #home-jumbotron{
-    
+    background-color: rgba(0,0,0,0);
     background-image: linear-gradient(to bottom,var(---jumbotron-bg-start),
      var(---jumbotron-bg-end) var(---jumbo-slider-end)) ;
     border-top-left-radius:0px;
     border-top-right-radius:0px;
-    color: #333;
+    color: var(---jumbo-text);
 }
 
 

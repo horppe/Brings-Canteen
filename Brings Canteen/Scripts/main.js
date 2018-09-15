@@ -12,7 +12,7 @@ var bgAnimatorCallback = function () { // bgAnimatorCallback will be called at e
     document.documentElement.style.setProperty('---jumbo-slider-end', currentValue + "%");
 }
 
-//setInterval(bgAnimatorCallback, 80);
+setInterval(bgAnimatorCallback, 80);
 
 
 function registerServiceWorker() {
@@ -25,4 +25,4 @@ function registerServiceWorker() {
     }
 }
 
-//registerServiceWorker();
+registerServiceWorker();

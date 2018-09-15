@@ -1,17 +1,19 @@
 ﻿var cacheName = "brings-canteen-v1";
 var compareName = "brings-canteen";
 var dependencies = [
-  "/Home/Image"
+  "/home/image?fileName=food-one.jpg",
+  "/home/image?fileName=food-two.jpg",
+  "/home/image?fileName=food-three.jpeg",
+  "/home/image?fileName=food-four.jpg"
 ];
-var imageUrl = "/Image";
+var imageUrl = "/home/image";
 
-self.addEventListener('install',function(event) {
-    
+self.addEventListener('install', function (event) {
+
     event.waitUntil(
       caches.open(cacheName).then(cache => {
           console.log("installing...");
-          //cache.addAll(dependencies);
-          return Promise.resolve();
+          return cache.addAll(dependencies);
       })
     );
 })
@@ -33,7 +35,7 @@ self.addEventListener('activate', event => {
 })
 
 self.addEventListener('fetch', event => {
-    
+
     var requestUrl = event.request.url;
 
 
@@ -60,13 +62,9 @@ self.addEventListener('fetch', event => {
                         }
                     });
                 }
-                 
+
             })
         );
-        
-    } 
-    
-    // if the request is not an Image request
-    //event.respondWith(fetch(event.request))
-    
+
+    }
 })
