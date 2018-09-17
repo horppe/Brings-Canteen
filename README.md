@@ -1,8 +1,6 @@
 # Brings-Canteen
 Brings Canteen - is an ASP.NET MVC 5 Food Ordering [system] Web application.
 
-Click <a href="https://bringscanteen.azurewebsites.net" target="blank" >here</a> to view.
-
 It makes use of a service worker to cache the animated background images to prevent too much http requests.
 
 Replace the Client Id and Secret in Keys.cs with yours, then uncomment the Authentication lines at the bottom of 'Startup.Auth.cs' in the 'App_Start' folder to make use of Google or Facebook Auth.
