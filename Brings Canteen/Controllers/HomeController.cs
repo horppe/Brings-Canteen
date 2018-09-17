@@ -302,6 +302,14 @@ namespace Bring_Canteen.Controllers
             return foodItems.Select(f => f.Value).ToList();
         }
 
-        
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
     }
 }
