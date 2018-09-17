@@ -1,7 +1,7 @@
 # Brings-Canteen
 Brings Canteen - is an ASP.NET MVC 5 Food Ordering [system] Web application.
 
-Click <a href="https://bringscanteen.azurewebsites.net/">here</a> to view
+Click <a target="_blank" href="https://bringscanteen.azurewebsites.net/">here</a> to view
 
 A 'Service Worker' caches the animated background images.
 
